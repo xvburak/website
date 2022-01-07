@@ -7,7 +7,7 @@ export type Screencast = {
   description: string;
   duration: number;
   nextScreencast?: number;
-  relatedDocs: RelatedDocs[];
+  relatedDocs?: RelatedDocs[];
   tile: string;
   title: string;
   youtubeId: string;

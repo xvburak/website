@@ -34,19 +34,22 @@
 </header>
 
 <YouTubeEmbed embedId={screencast.youtubeId} title={screencast.title} />
-<p class="text-center my-x-small">
-  Related documentation:
-  {#each screencast.relatedDocs as relatedDoc, i}
-    <a href="/docs{relatedDoc.path}">{relatedDoc.title}</a>
-    {screencast.relatedDocs.length > 0 &&
-    screencast.relatedDocs[i + 1] &&
-    !screencast.relatedDocs[i + 2]
-      ? " and "
-      : screencast.relatedDocs.length > 0 && screencast.relatedDocs[i + 1]
-      ? ", "
-      : ""}
-  {/each}
-</p>
+
+{#if screencast.relatedDocs}
+  <p class="text-center my-x-small">
+    Related documentation:
+    {#each screencast.relatedDocs as relatedDoc, i}
+      <a href={relatedDoc.path}>{relatedDoc.title}</a>
+      {screencast.relatedDocs.length > 0 &&
+      screencast.relatedDocs[i + 1] &&
+      !screencast.relatedDocs[i + 2]
+        ? " and "
+        : screencast.relatedDocs.length > 0 && screencast.relatedDocs[i + 1]
+        ? ", "
+        : ""}
+    {/each}
+  </p>
+{/if}
 
 {#if screencast.nextScreencast}
   <div class="max-w-sm my-medium mx-auto">

@@ -6,7 +6,6 @@
   import OpenGraph from "$lib/components/open-graph.svelte";
   import Screencast from "$lib/components/screencasts/screencast.svelte";
   import screencasts from "$lib/contents/screencasts";
-  import Section from "$lib/components/section.svelte";
   import Explore from "$lib/components/explore.svelte";
 </script>
 
@@ -23,9 +22,10 @@
   }}
 />
 
-<Section>
-  <h1 class="h2 text-center">Get started with a screencast</h1>
-</Section>
+<header class="tight">
+  <h1 class="h2 text-center">Full screencast playlist</h1>
+  <p>Learn how to be always ready-to-code by following these short videos.</p>
+</header>
 
 <section
   class="screencasts grid justify-center gap-y-medium gap-x-5 m-x-small px-5"

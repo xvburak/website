@@ -11,9 +11,9 @@ const screencasts: Screencast[] = [
     tile: "screencast-1.jpg",
     youtubeId: "w65POyu3ZUQ",
     relatedDocs: [
-      { path: "", title: "Introduction to Gitpod" },
-      { path: "/getting-started", title: "Getting Started" },
-      { path: "/context-urls", title: "Context URLs" },
+      { path: "/docs/", title: "Introduction to Gitpod" },
+      { path: "/docs/getting-started", title: "Getting Started" },
+      { path: "/docs/context-urls", title: "Context URLs" },
     ],
   },
   {
@@ -23,7 +23,9 @@ const screencasts: Screencast[] = [
     duration: 201,
     tile: "screencast-2.jpg",
     youtubeId: "4495YOMhhgo",
-    relatedDocs: [{ path: "/life-of-workspace", title: "Life of a Workspace" }],
+    relatedDocs: [
+      { path: "/docs/life-of-workspace", title: "Life of a Workspace" },
+    ],
   },
   {
     nextScreencast: id++,
@@ -34,10 +36,10 @@ const screencasts: Screencast[] = [
     tile: "screencast-3.jpg",
     youtubeId: "fA2fpqP1xaM",
     relatedDocs: [
-      { path: "/configure", title: "Configure Your Project" },
-      { path: "/config-gitpod-file", title: ".gitpod.yml" },
-      { path: "/config-docker", title: "Docker Configuration" },
-      { path: "/config-start-tasks", title: "Start Tasks" },
+      { path: "/docs/configure", title: "Configure Your Project" },
+      { path: "/docs/config-gitpod-file", title: ".gitpod.yml" },
+      { path: "/docs/config-docker", title: "Docker Configuration" },
+      { path: "/docs/config-start-tasks", title: "Start Tasks" },
     ],
   },
   {
@@ -49,8 +51,8 @@ const screencasts: Screencast[] = [
     tile: "screencast-4.jpg",
     youtubeId: "VYHsd1zI_tE",
     relatedDocs: [
-      { path: "/vscode-extensions", title: "VS Code Extensions" },
-      { path: "/environment-variables", title: "Environment Variables" },
+      { path: "/docs/vscode-extensions", title: "VS Code Extensions" },
+      { path: "/docs/environment-variables", title: "Environment Variables" },
     ],
   },
   {
@@ -61,7 +63,7 @@ const screencasts: Screencast[] = [
     duration: 128,
     tile: "screencast-5.jpg",
     youtubeId: "ZtlJ0PakUHQ",
-    relatedDocs: [{ path: "/prebuilds", title: "Prebuilt Workspaces" }],
+    relatedDocs: [{ path: "/docs/prebuilds", title: "Prebuilt Workspaces" }],
   },
   {
     nextScreencast: id++,
@@ -81,7 +83,92 @@ const screencasts: Screencast[] = [
     tile: "screencast-7.jpg",
     youtubeId: "TrY15zN98p8",
     relatedDocs: [
-      { path: "/sharing-and-collaboration", title: "Collaboration & Sharing" },
+      {
+        path: "/docs/sharing-and-collaboration",
+        title: "Collaboration & Sharing",
+      },
+    ],
+  },
+  {
+    title: "Git Integrations on Gitpod 🕸",
+    description: "Learn about Git Integrations that you can use on Gitpod.",
+    duration: 221,
+    tile: "screencast-8.jpg",
+    youtubeId: "nXMlnMEP784",
+    relatedDocs: [{ path: "/docs/integrations", title: "Integrations" }],
+  },
+  {
+    title: "Using Environment Variables 🌿",
+    description: "How to use environment variables in Gitpod.",
+    duration: 340,
+    tile: "screencast-9.jpg",
+    youtubeId: "dehln1E8ylY",
+    relatedDocs: [
+      { path: "/docs/environment-variables", title: "Environment Variables" },
+    ],
+  },
+  {
+    title: "How Do Extensions Work On Gitpod? 🔧",
+    description:
+      "Discover how to use VS Code Extensions in Gitpod and how they work on Gitpod using OpenVSX.",
+    duration: 185,
+    tile: "screencast-10.jpg",
+    youtubeId: "TwXYbZKEuoA",
+    relatedDocs: [
+      { path: "/docs/vscode-extensions", title: "VS Code Extensions" },
+    ],
+  },
+  {
+    title: "VS Code Desktop Support 🖥",
+    description:
+      "Learn how with VS Code Desktop Support, you can keep your local IDE configurations and benefit from Gitpod’s high-spec servers & automated prebuilds.",
+    duration: 230,
+    tile: "screencast-11.jpg",
+    youtubeId: "kI6firDA0Bw",
+    relatedDocs: [{ path: "/docs/editors/vscode", title: "VS Code Desktop" }],
+  },
+  {
+    title: "Databases on Gitpod 💿",
+    description: "Learn how to use Databases on Gitpod.",
+    duration: 91,
+    tile: "screencast-12.jpg",
+    youtubeId: "8oXSzN_W8Ls",
+    relatedDocs: [
+      {
+        path: "/blog/gitpodify#installing-databases",
+        title: "Installing databases",
+      },
+    ],
+  },
+  {
+    title: "Software Engineering from an iPad 🍎",
+    description:
+      "Learn how you can use your IPad to develop software using Gitpod.",
+    duration: 222,
+    tile: "screencast-13.jpg",
+    youtubeId: "bFj3fUSHf3A",
+  },
+  {
+    title: "Using Custom Docker Images 🐳",
+    description: "Learn how to use Docker Images on Gitpod.",
+    duration: 389,
+    tile: "screencast-14.jpg",
+    youtubeId: "jFsbmcXCRf8",
+    relatedDocs: [
+      { path: "/docs/config-docker", title: "Custom Docker Image" },
+    ],
+  },
+  {
+    title: " Local Companion App 🤖",
+    description: "Learn how to use Local Companion App.",
+    duration: 389,
+    tile: "screencast-15.jpg",
+    youtubeId: "lwb0JSVJ2J4",
+    relatedDocs: [
+      {
+        path: "/docs/develop/local-companion",
+        title: "Gitpod Local Companion",
+      },
     ],
   },
 ];

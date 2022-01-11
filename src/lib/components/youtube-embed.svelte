@@ -10,6 +10,7 @@
 <script lang="ts">
   import { afterUpdate } from "svelte";
   import { trackEvent } from "./segment.svelte";
+  import Share from "./share.svelte";
 
   export let embedId: string;
   export let title: string;
@@ -54,6 +55,35 @@
       setUpVideo();
     }
   });
+
+  export const youtubeURL = `https://youtube.com/watch?v=${embedId}`;
+
+  const shareLinks = [
+    {
+      href: `https://twitter.com/intent/tweet?text=${encodeURIComponent(
+        youtubeURL
+      )}`,
+      alt: "Twitter",
+      icon: "/svg/brands/twitter.svg",
+      trackingName: "twitter",
+    },
+    {
+      href: `http://www.reddit.com/submit?url=${encodeURIComponent(
+        youtubeURL
+      )}`,
+      alt: "Reddit",
+      icon: "/svg/brands/reddit.svg",
+      trackingName: "reddit",
+    },
+    {
+      href: `http://news.ycombinator.com/submitlink?u=${encodeURIComponent(
+        youtubeURL
+      )}`,
+      alt: "HackerNews",
+      icon: "/svg/brands/hackernews.svg",
+      trackingName: "hackernews",
+    },
+  ];
 </script>
 
 <style>
@@ -62,8 +92,12 @@
     overflow: hidden;
     max-width: 100%;
     max-height: 580px;
-    width: 1055px;
     margin: auto;
+  }
+
+  .youtube,
+  .youtube + :global(div) {
+    width: 1055px;
   }
 
   .youtube::after {
@@ -94,3 +128,8 @@
     allowfullscreen
   />
 </div>
+<Share
+  text="Share this video"
+  {shareLinks}
+  class="share justify-end mx-auto mt-xx-small"
+/>

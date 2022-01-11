@@ -3,6 +3,7 @@
   import OpenGraph from "./open-graph.svelte";
   import { authors, authorSocialMediaLinks } from "$lib/contents/authors";
   import "$lib/assets/markdown-commons.scss";
+  import Share from "$lib/components/share.svelte";
 
   export let baseUrl: string;
   export let imagesDirectoryName: string;
@@ -42,7 +43,7 @@
     return result;
   };
 
-  const socialLinks = [
+  const shareLinks = [
     {
       href: `https://twitter.com/intent/tweet?text=${encodeURIComponent(
         `${title} by ${renderTwitterHandles()} ${baseUrl}${slug}`
@@ -107,24 +108,10 @@
     <div>
       <slot />
     </div>
-    <section class="share">
-      <h2 class="h4">Share this post:</h2>
-      <ul>
-        {#each socialLinks as link}
-          <li>
-            <a
-              href={link.href}
-              rel="noreferrer"
-              target="_blank"
-              data-analytics={`{"variant":"social_media","context":"` +
-                link.alt.toLowerCase() +
-                `_share"}`}
-            >
-              <img src={link.icon} alt={link.alt} height="24" width="24" />
-            </a>
-          </li>
-        {/each}
-      </ul>
-    </section>
+    <Share
+      text="Share this post:"
+      {shareLinks}
+      class="border-t border-solid border-divider pt-micro mt-small"
+    />
   </div>
 </div>

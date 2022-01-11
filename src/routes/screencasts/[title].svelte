@@ -17,6 +17,7 @@
   import YouTubeEmbed from "$lib/components/youtube-embed.svelte";
   import { stringToBeautifiedFragment } from "$lib/utils/helpers";
   import OpenGraph from "$lib/components/open-graph.svelte";
+  import Duration from "$lib/components/screencasts/duration.svelte";
 
   export let screencast: ScreencastType;
 </script>
@@ -35,21 +36,27 @@
 
 <YouTubeEmbed embedId={screencast.youtubeId} title={screencast.title} />
 
-{#if screencast.relatedDocs}
-  <p class="text-center my-x-small">
-    Related documentation:
-    {#each screencast.relatedDocs as relatedDoc, i}
-      <a href={relatedDoc.path}>{relatedDoc.title}</a>
-      {screencast.relatedDocs.length > 0 &&
-      screencast.relatedDocs[i + 1] &&
-      !screencast.relatedDocs[i + 2]
-        ? " and "
-        : screencast.relatedDocs.length > 0 && screencast.relatedDocs[i + 1]
-        ? ", "
-        : ""}
-    {/each}
+<div class="max-w-md mx-auto mt-24">
+  <Duration duration={screencast.duration} />
+  <p class="h5 text-black font-bold mt-macro mb-xx-small">
+    {screencast.description}
   </p>
-{/if}
+  {#if screencast.relatedDocs}
+    <p class="mt-xx-small mb-x-small">
+      Related docs:
+      {#each screencast.relatedDocs as relatedDoc, i}
+        <a href={relatedDoc.path}>{relatedDoc.title}</a>
+        {screencast.relatedDocs.length > 0 &&
+        screencast.relatedDocs[i + 1] &&
+        !screencast.relatedDocs[i + 2]
+          ? " and "
+          : screencast.relatedDocs.length > 0 && screencast.relatedDocs[i + 1]
+          ? ", "
+          : ""}
+      {/each}
+    </p>
+  {/if}
+</div>
 
 {#if screencast.nextScreencast}
   <div class="max-w-sm my-medium mx-auto">

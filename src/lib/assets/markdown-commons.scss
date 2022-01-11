@@ -71,11 +71,6 @@
     }
   }
 
-  ol,
-  ul:not(.share > ul) {
-    margin: var(--micro) 0;
-  }
-
   ol {
     @apply list-inside list-decimal;
 
@@ -84,7 +79,7 @@
     }
   }
 
-  ul:not(.share > ul) {
+  ul {
     @apply pl-xx-small md:pl-x-small;
 
     > li {

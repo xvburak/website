@@ -39,24 +39,38 @@
   }
 </style>
 
-<button
-  on:mouseenter={() => (isRendered = true)}
-  on:mouseleave={() => (isRendered = false)}
-  class={clazz}
+<span
+  on:mouseleave={() => {
+    isRendered = false;
+  }}
 >
-  <slot />
+  <button
+    on:mouseover={() => (isRendered = true)}
+    on:click={() => {
+      isRendered = true;
+    }}
+    on:focus={() => {
+      isRendered = true;
+    }}
+    on:blur={() => {
+      isRendered = false;
+    }}
+    class={clazz}
+  >
+    <slot />
 
-  <img
-    use:popperRef
-    src="/svg/question-mark.svg"
-    alt="Tooltip"
-    class="h-5 w-5"
-  />
-</button>
+    <img
+      use:popperRef
+      src="/svg/question-mark.svg"
+      alt="Tooltip"
+      class="h-5 w-5"
+    />
+  </button>
 
-{#if isRendered}
-  <div class="tooltip" use:popperContent={popperOptions}>
-    {@html title}
-    <div class="arrow" data-popper-arrow />
-  </div>
-{/if}
+  {#if isRendered}
+    <div class="tooltip" use:popperContent={popperOptions}>
+      {@html title}
+      <div class="arrow" data-popper-arrow />
+    </div>
+  {/if}
+</span>

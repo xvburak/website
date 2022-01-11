@@ -1,7 +1,7 @@
 <script lang="ts">
   import { createPopperActions } from "svelte-popperjs";
 
-  const [popperRef, popperContent, getInstance] = createPopperActions();
+  const [popperRef, popperContent] = createPopperActions();
 
   const popperOptions = {
     placement: "top-start",
@@ -23,20 +23,17 @@
   .tooltip :global(a) {
     @apply text-off-white;
   }
-  #arrow,
-  #arrow::before {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background: inherit;
+  .arrow,
+  .arrow::before {
+    @apply absolute w-3 h-3 bg-inherit;
   }
 
-  #arrow {
-    visibility: hidden;
+  .arrow {
+    @apply invisible;
   }
 
-  #arrow::before {
-    visibility: visible;
+  .arrow::before {
+    @apply visible;
     content: "";
     transform: rotate(45deg);
   }
@@ -60,6 +57,6 @@
 {#if isRendered}
   <div class="tooltip" use:popperContent={popperOptions}>
     {@html title}
-    <div id="arrow" data-popper-arrow />
+    <div class="arrow" data-popper-arrow />
   </div>
 {/if}

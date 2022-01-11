@@ -1,13 +1,5 @@
 <script lang="ts">
-  import PostPreview from "./blog/post-preview.svelte";
   import Section from "./section.svelte";
-  import { session } from "$app/stores";
-  import type { BlogPost } from "$lib/types/blog-post.type";
-
-  const post = $session.posts.find(
-    (p: BlogPost) =>
-      p.slug === "i-said-goodbye-to-local-development-and-so-can-you"
-  );
 
   export let title: string;
   export let text: string;
@@ -19,8 +11,5 @@
     <p class="text-large">
       {@html text}
     </p>
-  </div>
-  <div class="max-w-7xl mx-auto mt-small">
-    <PostPreview {post} type="blog" layout="row" isMostRecent={true} />
   </div>
 </Section>

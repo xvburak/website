@@ -3,9 +3,9 @@
 
   export let href: string;
 
-  $: normalizedPath = /self-hosted\/\d\.\d\.\d/.test($page.path)
-    ? $page.path.replace(/\d\.\d\.\d/, "latest")
-    : $page.path;
+  $: normalizedPath = /self-hosted\/\d\.\d\.\d/.test($page.url.pathname)
+    ? $page.url.pathname.replace(/\d\.\d\.\d/, "latest")
+    : $page.url.pathname;
   $: active = href === normalizedPath || href === `${normalizedPath}/`;
 </script>
 

@@ -12,7 +12,7 @@
     document.cookie = "gitpod-marketing-website-visited=true;domain=gitpod.io";
   });
 
-  $: if ($page.path) {
+  $: if ($page.url.pathname) {
     // Workaround until https://github.com/sveltejs/kit/issues/2664 is fixed
     if (typeof window !== "undefined" && window.location.hash) {
       const deepLinkedElement = document.getElementById(

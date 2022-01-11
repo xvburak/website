@@ -11,7 +11,7 @@ export const programFeatures: ProgramFeature[] = [
   {
     title: "Compliance",
     paragraphs: [
-      "Gitpod is a European company committed to developer and data privacy. We provide our users with the ability to access and control the information that we collect about them.",
+      "Gitpod is a European company committed to security and data privacy. We provide our users with the ability to access and control the information that we collect about them.",
       "Gitpod is built with security in mind and we continuously invest in security best practices. We are currently in the process of becoming SOC 2 compliant and you can request a copy of our SOC2 audit report as soon as it's available.",
     ],
     image: "compliance.svg",

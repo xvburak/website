@@ -3,6 +3,10 @@
   import Section from "../section.svelte";
   import Faqs from "../faqs/faqs.svelte";
   import Faq from "../faqs/faq.svelte";
+  import Modal from "../modal.svelte";
+  import RedeemOffer from "./redeem-offer.svelte";
+
+  let isModalOpen: boolean = false;
 </script>
 
 <style lang="scss">
@@ -43,7 +47,12 @@
         <a href="/contact/sales">Contact us</a>. If you are a student, you may
         use the Student Unlimited Plan for {isEurope() ? "€8" : "$9"} per month (usually{" "}
         {isEurope() ? "€35" : "$39"}). See
-        <a href="#plans">Gitpod for Students</a> for more information.
+        <button
+          on:click={() => (isModalOpen = true)}
+          class="font-bold text-link-grey hover:text-black transition duration-200"
+        >
+          Gitpod for Students
+        </button> for more information.
       </p>
     </Faq>
     <Faq title="How can I pay?">
@@ -90,6 +99,36 @@
         cycle.
       </p>
     </Faq>
+    <Faq title="What are the benefits of Gitpod?">
+      <p>
+        Gitpod enables cloud based development without friction. Pre-configured
+        and automated dev environments prevent "works on my machine issues", let
+        you work on multiple issues or features at once and let's you easily
+        collaborate with colleagues. All in your favorite IDE with the tools and
+        extensions you love. In the browser or in your desktop version.
+      </p>
+    </Faq>
+    <Faq title="Is Gitpod secure?">
+      <p>
+        Gitpod is secure by design and at the heart of what we do. Your source
+        code is safely stored in the cloud, never locally. Each Gitpod workspace
+        and prebuild runs on a secured single-use container providing fast
+        startup times without compromising on security. Learn more at <a
+          href="/security">gitpod.io/security</a
+        >. We are also in the process of receiving the SOC2 compliance report.
+      </p>
+    </Faq>
+    <Faq title="How does Gitpod differ from GitHub Codespaces?">
+      <p>
+        With Gitpod you can get started in a flash, the startup times are
+        significantly faster than with GitHub Codespaces. Gitpod is also a lot
+        more resource efficient and thereby very cost-effective. With Gitpod you
+        can choose the tools you would like to work with. It's open source and
+        also available for self-hosting. Learn more on <a
+          href="/gitpod-vs-github-codespaces">Gitpod vs Codespaces</a
+        >.
+      </p>
+    </Faq>
     <Faq title="Still have more questions?">
       <p>
         We are happy to answer them, please <a href="/contact/support"
@@ -99,3 +138,7 @@
     </Faq>
   </Faqs>
 </Section>
+
+<Modal on:close={() => (isModalOpen = false)} isOpen={isModalOpen}>
+  <RedeemOffer />
+</Modal>

@@ -1,3 +1,7 @@
+<script context="module">
+  export const prerender = true;
+</script>
+
 <script>
   import Hero from "$lib/components/jetbrains-space/hero.svelte";
   import FeatureBoxes from "$lib/components/feature-boxes.svelte";

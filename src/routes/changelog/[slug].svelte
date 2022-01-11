@@ -7,11 +7,11 @@
 
   const reverseHtmlEscaping = (slug: string) => slug.replace(/&amp;/g, "&");
 
-  export async function load({ page, session }) {
+  export async function load({ params, session }) {
     const changelogEntry: ChangelogEntryType = session.changelogEntries.find(
       (entry: ChangelogEntryType) =>
         stringToBeautifiedFragment(entry.title) ===
-        reverseHtmlEscaping(page.params.slug)
+        reverseHtmlEscaping(params.slug)
     );
     return { props: { changelogEntry } };
   }

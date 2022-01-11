@@ -6,7 +6,9 @@
   const isPrefecthable = isExternal ? undefined : true;
 
   $: isActivePage =
-    $page.path === "/" ? /\/$/.test(href) : href.indexOf($page.path) >= 0;
+    $page.url.pathname === "/"
+      ? /\/$/.test(href)
+      : href.indexOf($page.url.pathname) >= 0;
 </script>
 
 <style lang="postcss">

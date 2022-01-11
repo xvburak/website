@@ -139,7 +139,9 @@
       {/if}
     </div>
     <div class="flex items-center">
-      <SignUpButtonTablet />
+      {#if !$menuState}
+        <SignUpButtonTablet />
+      {/if}
       <MobileMenuToggle />
     </div>
   </div>

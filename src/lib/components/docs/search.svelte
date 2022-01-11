@@ -28,7 +28,7 @@
   let docSearchInput: HTMLInputElement;
   let docSearchScript: HTMLScriptElement;
   let docSearchScriptLoaded = false;
-  let isSupportPage = $page.path.includes("support");
+  let isSupportPage = $page.url.pathname.includes("support");
 
   $: if (docSearchInput && (docSearchScript || docSearchScriptLoaded)) {
     window.docsearch &&

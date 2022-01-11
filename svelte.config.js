@@ -17,7 +17,9 @@ const config = {
   extensions: [".svelte", ".md"],
 
   kit: {
-    adapter: adapterNetlify(),
+    adapter: adapterNetlify({
+      split: true,
+    }),
     amp: false,
     appDir: "_app",
     files: {

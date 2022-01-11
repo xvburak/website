@@ -13,7 +13,7 @@
   ];
 
   $: obsoleteConfig = configurations.find((config) =>
-    $page.path.includes(config.urlPattern)
+    $page.url.pathname.includes(config.urlPattern)
   );
 </script>
 

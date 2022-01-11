@@ -31,15 +31,23 @@ Gitpod comes with [emmet](https://emmet.io/) support right out of the box giving
 
 ## Live Preview
 
-![Live Preview Demo](../../../static/images/docs/live_preview.png)
-With Gitpod you can open a preview for Markdown and HTML files while you are coding.
+![Live Preview Demo](../../../static/images/docs/html-preview.png)
+With Gitpod you can open a preview for HTML files while you are coding. You can do this by opening a web server `python -m http.server 8000`.
 
-To open the preview for a file, click the `Open Preview to the Side` icon in the upper right-hand corner:
+You can also automate this in your [`.gitpod.yml`](https://www.gitpod.io/docs/config-gitpod-file) file, so that every time you start a new workspace your preview is ready to go. For example:
 
-![preview icon](../../../static/images/docs/preview.png)
+```yaml
+tasks:
+  - name: Start web server
+    init: python -m http.server 8000
+
+ports:
+  - port: 8000
+    onOpen: open-preview
+```
 
 ## Try It!
 
-Want to try it out? And see a minimal example in action? Great, then you can open this in Gitpod:
+Want to see a minimal example in action? Try it out by opening an example on Gitpod:
 
 [![gitpod-io/Gitpod-Web-Development-Example](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/gitpod-io/Gitpod-Web-Development-Example)

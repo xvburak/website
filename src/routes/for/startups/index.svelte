@@ -11,12 +11,19 @@
   import ProgramBenefits from "$lib/components/program-benefits.svelte";
   import Header from "$lib/components/startups/header.svelte";
   import Eligibility from "$lib/components/eligibility.svelte";
-  import GitpodVsLocalDevPost from "$lib/components/gitpod-vs-local-development-post.svelte";
   import Faqs from "$lib/components/startups/faqs.svelte";
   import Explore from "$lib/components/explore.svelte";
   import OpenGraph from "$lib/components/open-graph.svelte";
   import SectionFeatures from "$lib/components/section-features.svelte";
+  import SectionCommon from "$lib/components/section-common.svelte";
+  import FeatureBox from "$lib/components/feature-box.svelte";
 </script>
+
+<style lang="postcss">
+  :global(.feature-box) :global(.preview) {
+    @apply col-start-2 !important;
+  }
+</style>
 
 <OpenGraph
   data={{
@@ -46,11 +53,29 @@
   ulMaxWidth="365px"
 />
 
-<GitpodVsLocalDevPost
+<SectionCommon
   title="Helpful resources"
   text="If you are still uncertain about moving your local dev environment to the
-  cloud, this blog post will clear your thoughts."
-/>
+    cloud, this blog post will clear your thoughts."
+  textClassNames="max-w-3xl mx-auto mb-small"
+>
+  <FeatureBox
+    feature={{
+      title: "Gitpod vs Local Development",
+      paragraph:
+        "Why should you move dev environment to the cloud? Here is the answer.",
+      moreButton: {
+        text: "View Gitpod vs Local Dev",
+        href: "/vs/local-development",
+      },
+      image: {
+        src: "/images/startups/bob-alice.png",
+        alt: "Bob and Alice",
+      },
+    }}
+    slot="content"
+  />
+</SectionCommon>
 
 <Faqs />
 

@@ -13,7 +13,7 @@
     norobots = false,
   } = data || {};
 
-  const url = `https://${$page.host}${$page.path}`;
+  const url = $page.url.toString();
 </script>
 
 <svelte:head>

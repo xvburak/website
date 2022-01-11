@@ -10,7 +10,7 @@
 
 <style lang="postcss">
   label {
-    @apply mb-0 cursor-pointer text-h6 font-bold py-macro px-xx-small rounded-5xl transition-all duration-300;
+    @apply mb-0 cursor-pointer text-h6 font-bold py-macro px-xx-small rounded-5xl transition-all duration-300 hover:text-gray-900;
   }
 
   .switch-container {
@@ -18,7 +18,7 @@
   }
 
   label:first-of-type {
-    @apply bg-orange-700 text-gray-900;
+    @apply bg-orange-700;
   }
 
   .checked label {
@@ -58,7 +58,9 @@
     class:checked
     class:inversed={isInversed}
   >
-    <label for="toggle">{labelLeft}</label>
+    <label for="toggle" class:text-gray-900={!checked && !isInversed}
+      >{labelLeft}</label
+    >
     <div class="relative flex items-center cursor-pointer">
       <input id="toggle" type="checkbox" on:change class="h-full w-full" />
     </div>

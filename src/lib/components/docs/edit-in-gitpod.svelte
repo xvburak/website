@@ -5,7 +5,9 @@
   const BASE_PATH =
     "https://gitpod.io#https://github.com/gitpod-io/website/tree/main/src/routes";
   const currentPage =
-    $page.path === "/docs" ? `${$page.path}/index` : $page.path;
+    $page.url.pathname === "/docs"
+      ? `${$page.url.pathname}/index`
+      : $page.url.pathname;
   const href = `${BASE_PATH}${currentPage}.md`;
 </script>
 

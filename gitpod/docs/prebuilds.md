@@ -187,3 +187,15 @@ github:
 
 The `addComment` and `addBadge` behaviours are not mutually exclusive (i.e. enabling one does not disable the other).
 If you don't want the comments to be added, disable them using `addComment: false`.
+
+## Access to environment variables in Prebuilds
+
+It is not necessarily best practice to have user specific environment variables in a prebuild `init` block, but sometimes there are build time requirements that mean certain tokens need setting or files need creating. Environment variables defined within your Gitpod Variables preferences are not imported by default, but they can be accessed with the following command within an `init` block:
+
+```yaml
+tasks:
+  - init: |
+      eval $(gp env -e)
+```
+
+After that, the available environment variables will be installed into the rest of you shell script and can be accessed normally.

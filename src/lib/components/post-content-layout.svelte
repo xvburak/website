@@ -99,7 +99,7 @@
           usernames={author}
           displayNames={authorDisplayNames}
           socialMediaLinks={authorSocialMediaLinks}
-          socialMediaLinkClasses="inline-flex mr-4 px-2 bg-white rounded-xl text-dark-grey focus:bg-off-white focus:text-black hover:bg-off-white hover:text-black"
+          socialMediaLinkClasses="inline-flex mr-2 px-2 bg-white rounded-xl text-dark-grey focus:bg-off-white focus:text-black hover:bg-off-white hover:text-black"
           socialMediaImgClasses="mr-2 h-6 w-6 place-self-center"
         /></span
       >

@@ -27,7 +27,7 @@
         type,
         emotion: selectedEmotion,
         note,
-        url: `https://${$page.host + $page.path}`,
+        url: $page.url.toString(),
       }),
     });
 

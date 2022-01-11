@@ -1,5 +1,6 @@
 <script lang="ts" context="module">
   import { dev } from "$app/env";
+  export const prerender = true;
   export const load = () => {
     return dev
       ? {}

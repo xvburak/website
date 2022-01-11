@@ -1,7 +1,7 @@
 <script lang="ts">
   import { page } from "$app/stores";
   import { getMenuContext } from "$lib/contents/docs/menu";
-  const menuCtx = getMenuContext($page.path);
+  const menuCtx = getMenuContext($page.url.pathname);
 </script>
 
 <div

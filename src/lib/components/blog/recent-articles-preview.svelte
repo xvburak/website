@@ -6,7 +6,7 @@
 
   const recentPosts = $session.posts.slice(0, 4);
   $: recentPostsWithoutCurrent = recentPosts
-    .filter((post: BlogPost) => $page.path.indexOf(post.slug) === -1)
+    .filter((post: BlogPost) => $page.url.pathname.indexOf(post.slug) === -1)
     .slice(0, 3);
 </script>
 

@@ -11,7 +11,7 @@
   let toggled: boolean = false;
 
   const handleChange = (e: Event) => {
-    const slug = $page.path.split("/")[1];
+    const slug = $page.url.pathname.split("/")[1];
     toggled = (<HTMLInputElement>e.target).checked;
     setTimeout(() => {
       if (slug === "pricing") {
@@ -38,7 +38,7 @@
     labelLeft="SaaS"
     labelRight="Self-hosted"
     on:change={handleChange}
-    isInversed={$page.path.includes("self-hosted")}
+    isInversed={$page.url.pathname.includes("self-hosted")}
     checked={toggled}
   />
   <PricingBoxes {pricingPlans} />

@@ -2,8 +2,8 @@
   import screencasts from "$lib/contents/screencasts";
 
   export const prerender = true;
-  export const load = async function ({ page }) {
-    const { title } = page.params;
+  export const load = async function ({ params }) {
+    const { title } = params;
     const screencast = screencasts.find(
       (s) => stringToBeautifiedFragment(s.title.slice(0, -3)) === title
     );

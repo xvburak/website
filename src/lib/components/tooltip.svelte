@@ -17,7 +17,6 @@
 <style lang="postcss">
   .tooltip {
     @apply absolute z-10 w-60;
-    border-color: transparent black transparent transparent;
     bottom: 112%;
     left: 90%;
 
@@ -45,14 +44,15 @@
 
     &::before {
       content: "";
-      @apply absolute block;
-      top: 100%;
-      left: 25%;
+      @apply absolute block top-full left-10;
       margin-left: -5px;
       border-width: 5px;
-      border-style: solid;
       border-color: black transparent transparent transparent;
     }
+  }
+
+  .tooltip :global(a) {
+    @apply text-off-white;
   }
 </style>
 
@@ -75,7 +75,7 @@
 
   {#if isRendered}
     <div
-      class="tooltip bg-dark-grey text-off-white text-xs p-macro rounded-xl shadow-normal border border-solid border-white normal-case font-normal"
+      class="tooltip bg-dark-grey text-off-white text-xs p-macro rounded-xl shadow-normal  normal-case font-normal"
     >
       {@html title}
     </div>

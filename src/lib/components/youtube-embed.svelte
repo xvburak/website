@@ -61,8 +61,8 @@
     position: relative;
     overflow: hidden;
     max-width: 100%;
-    max-height: 500px;
-    width: 880px;
+    max-height: 580px;
+    width: 1055px;
     margin: auto;
   }
 
@@ -82,7 +82,7 @@
   }
 </style>
 
-<div class="youtube">
+<div class="youtube rounded-2xl shadow-light1">
   <iframe
     id={randomId}
     src={`https://www.youtube.com/embed/${embedId}?enablejsapi=1`}

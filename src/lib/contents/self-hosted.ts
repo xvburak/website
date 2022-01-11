@@ -23,10 +23,10 @@ export const pricingPlans: Pricing[] = [
     features: [
       "Public & private repos",
       "GitLab, GitHub and Bitbucket",
-      "+ Prebuilds",
-      "+ Shared Workspaces",
-      "+ Snapshots",
-      "+ Admin Dashboard",
+      "Prebuilds",
+      "Shared Workspaces",
+      "Snapshots",
+      "Admin Dashboard",
     ],
     btnText: "Install now",
     btnHref: "/docs/self-hosted/latest",
@@ -39,7 +39,7 @@ export const pricingPlans: Pricing[] = [
     features: [
       "Starts after the 11th user",
       "Everything from Free",
-      "+ Standard support",
+      "Standard support",
     ],
     btnText: "Register and Install now",
     btnHref: "/enterprise-license",

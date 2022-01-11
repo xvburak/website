@@ -10,4 +10,8 @@ export type Card = {
     href: string;
     text: string;
   };
+  modal?: {
+    btnText: string;
+    modalContentComponent: any;
+  };
 };

@@ -20,6 +20,7 @@
 <style lang="postcss">
   .box {
     width: 295px;
+    padding-bottom: 85px;
 
     @media (max-width: 375px) {
       @apply w-full;
@@ -60,7 +61,7 @@
 </style>
 
 <div
-  class={`box flex flex-col justify-between bg-gray-100 pt-x-small pb-medium px-0 mt-0 mx-micro mb-x-small rounded-2xl shadow-normal text-center transition-all duration-200 hover:shadow-brand ${
+  class={`box flex flex-col justify-between items-center bg-gray-100 pt-small px-0 mt-0 mx-micro mb-x-small rounded-2xl shadow-normal text-center transition-all duration-200 hover:shadow-brand ${
     spiced ? "spiced shadow-brand" : ""
   }`}
 >
@@ -69,7 +70,7 @@
     <div class="h1 font-bold text-black flex items-center justify-center">
       {@html price}
     </div>
-    <div class="mb-xx-small text-dark-grey font-semibold">
+    <div class="text-dark-grey font-semibold">
       {#if duration}
         {duration}
       {:else}
@@ -78,10 +79,10 @@
     </div>
     {#if features}
       <ul
-        class="mx-small sm:mx-medium lgx:mx-small my-small space-y-micro text-left"
+        class="inline-flex flex-col ml-x-small mt-xx-small space-y-micro text-left"
       >
         {#each features as feature}
-          <li class="relative flex text-black">
+          <li class="relative inline-flex text-black">
             {#if typeof feature !== "string"}
               <QaTooltip text={feature.text} tooltip={feature.tooltip} />
             {:else}

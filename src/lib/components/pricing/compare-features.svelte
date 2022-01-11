@@ -108,7 +108,7 @@
         <li>
           <QaTooltip
             text="Snapshots"
-            tooltip="create a copy of your workspace by sharing a snapshot with your team."
+            tooltip="Create a copy of your workspace by sharing a snapshot with your team."
           />
         </li>
         <li>

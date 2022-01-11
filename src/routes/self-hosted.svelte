@@ -22,7 +22,7 @@
 <Faqs />
 <Explore
   contents={{
-    title: "Install Self-hosted",
+    title: "Install <div class='whitespace-nowrap inline'>Self-hosted</div>",
     description: `
       Install Gitpod Self-hosted on
         <a href='/docs/self-hosted/latest/installation/on-gke'>GKE</a>,

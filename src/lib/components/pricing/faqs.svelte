@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { isEurope } from "$lib/utils/helpers";
   import Section from "../section.svelte";
   import Faqs from "../faqs/faqs.svelte";
   import Faq from "../faqs/faq.svelte";
@@ -7,7 +6,6 @@
   import RedeemOffer from "./redeem-offer.svelte";
 
   import { pricingFAQ } from "$lib/contents/pricing";
-  import { each } from "svelte/internal";
 
   let isModalOpen: boolean = false;
 </script>
@@ -15,15 +13,6 @@
 <style lang="scss">
   h2 {
     text-align: center;
-  }
-
-  .images {
-    display: flex;
-    margin-top: var(--xx-small);
-
-    & > *:not(:last-child) {
-      margin-right: var(--xx-small);
-    }
   }
 </style>
 

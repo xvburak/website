@@ -12,7 +12,7 @@
     grid-template-columns: repeat(auto-fill, 316px);
 
     @media (max-width: 1460px) {
-      @apply max-w-4xl mx-auto;
+      @apply mx-auto;
     }
 
     @media (max-width: 400px) {

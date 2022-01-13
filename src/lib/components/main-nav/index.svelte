@@ -4,14 +4,14 @@
   import MobileMenuToggle from "./mobile-menu/toggle.svelte";
   import NavItem from "./nav-item.svelte";
   import menuState from "./mobile-menu/state";
-  import LoginButton from "./login-button.svelte";
-  import SignUpButton from "./sign-up-button.svelte";
-  import DashboardButton from "./dashboard-button.svelte";
-  import Logo from "../svgs/logo.svelte";
+  // import LoginButton from "./login-button.svelte";
+  // import SignUpButton from "./sign-up-button.svelte";
+  // import DashboardButton from "./dashboard-button.svelte";
+  // import Logo from "../svgs/logo.svelte";
   import { showHideOverflowY } from "$lib/utils/helpers";
-  import SignUpButtonTablet from "./sign-up-button-tablet.svelte";
+  // import SignUpButtonTablet from "./sign-up-button-tablet.svelte";
   import AnnouncementBanner from "$lib/components/banners/announcement.svelte";
-  import ContactLink from "./contact-link.svelte";
+  // import ContactLink from "./contact-link.svelte";
 
   let scroll: number;
 
@@ -21,25 +21,17 @@
 
   const navItems = [
     {
-      href: "/screencasts",
-      label: "Screencasts",
-      isHighlighted: true,
-    },
-    {
       href: "/blog",
       label: "Blog",
     },
     {
-      href: "/docs",
-      label: "Docs",
+      href: "/projects",
+      label: "Projects",
     },
     {
-      href: "/changelog",
-      label: "Changelog",
-    },
-    {
-      href: "/pricing",
-      label: "Pricing",
+      href: "/screencasts",
+      label: "Screencasts",
+      // isHighlighted: true,
     },
   ];
 
@@ -65,7 +57,7 @@
 
   .wrapper {
     max-width: 1500px;
-    @apply h-14;
+    @apply py-xx-small px-xx-small;
   }
 
   .scrolled-out {
@@ -80,7 +72,6 @@
 
   @media (min-width: 1050px) {
     .wrapper {
-      @apply h-20;
     }
 
     .nav-items,
@@ -96,6 +87,12 @@
   button::-moz-focus-inner {
     @apply border-0;
   }
+
+  .mobile-nav {
+    @media (min-width: 1050px) {
+      @apply hidden;
+    }
+  }
 </style>
 
 <svelte:window bind:scrollY={scroll} />
@@ -107,9 +104,7 @@
   class:bg-open-state={$menuState}
 >
   <AnnouncementBanner />
-  <div
-    class="wrapper flex items-center justify-between mx-auto h-16 md:h-20 px-4 sm:px-8"
-  >
+  <div class="wrapper flex items-center justify-between mx-auto px-4 sm:px-8">
     <button
       on:contextmenu|preventDefault={() => goto("/media-kit")}
       aria-label="Home"
@@ -120,30 +115,34 @@
         scrollToTop();
       }}
     >
-      <Logo class="h-8 w-28 lgx:h-10 lgx:w-32" />
+      <p class="font-bold">Lorem ipsum</p>
     </button>
+
     <div
-      class="nav-items mx-auto hidden px-2 space-x-6 items-center md:space-x-12"
+      class="nav-items justify-end hidden px-2 space-x-6 items-center md:space-x-12"
     >
       {#each navItems as navItem}
         <NavItem on:focus={scrollToTop} {navItem} />
       {/each}
     </div>
-    <div class="login-wrapper items-center hidden space-x-x-small">
-      <ContactLink />
-      {#if isLoggedIn}
-        <DashboardButton class="h-8 w-24" />
-      {:else}
-        <LoginButton />
-        <SignUpButton class="h-8 w-20" />
-      {/if}
-    </div>
-    <div class="flex items-center">
+
+    <!-- <div class="flex items-center">
       {#if !$menuState}
-        <SignUpButtonTablet />
+        <p>hello</p>
       {/if}
+      <MobileMenuToggle />
+    </div> -->
+
+    <!-- {#if !$menuState}
+    <div class="hidden">
+        <p>hello</p>
+      </div> 
+      {/if}-->
+
+    <div class="flex items-center mobile-nav">
       <MobileMenuToggle />
     </div>
   </div>
+
   <MobileMenu {navItems} {isLoggedIn} />
 </nav>

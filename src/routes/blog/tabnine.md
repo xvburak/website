@@ -1,6 +1,6 @@
 ---
 author: JohannesLandgraf, mikenikles
-date: Wednesday, 06 Oct 2021 13:00:00 UTC
+date: Thursday, 13 Jan 2022 10:00:00 UTC
 excerpt: Tabnine integrates with Gitpod in browser-based VS Code.
 image: gitpod-tabnine.png
 slug: tabnine

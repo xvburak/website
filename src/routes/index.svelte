@@ -31,12 +31,11 @@
   }}
 />
 
-<Hero />
-<ChooseProject />
-<div id="choose-project-observer-target-bottom">
+<!-- <ChooseProject /> -->
+<!-- <div id="choose-project-observer-target-bottom">
   <Features {features} />
-</div>
-<SectionScreenshot />
+</div> -->
+<!-- <SectionScreenshot />
 <UsedBy
   title="Used by 500k+ developers"
   class="bg-off-white rounded-2xl shadow-normal pt-small pb-9"
@@ -47,4 +46,4 @@
 </Section>
 <Testimonials {testimonials} />
 <GetStarted />
-<SpinUp />
+<SpinUp /> -->

@@ -12,7 +12,7 @@
 <Section>
   <h2 class="text-center text-h2" class:mb-small={!text}>{title}</h2>
   {#if text}
-    <p class="text-center text-large max-w-4xl mb-small mx-auto">
+    <p class="text-center text-large  mb-small mx-auto">
       {text}
     </p>
   {/if}

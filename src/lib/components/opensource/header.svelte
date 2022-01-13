@@ -11,7 +11,7 @@
 
 <header>
   <h1>Gitpod for Open Source</h1>
-  <p class="max-w-4xl m-auto">
+  <p class=" m-auto">
     Spend less time reviewing pull-requests, on-boarding contributors and more
     time on building great things. <strong>Get a free Open-Source Plan.</strong>
   </p>

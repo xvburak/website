@@ -6,7 +6,7 @@ image: header.jpg
 slug: devx-evolution
 subtitle:
 teaserImage: header.jpg
-title: DevX Digest 05 - How DevX has evolved
+title: Hello
 type: digest
 ---
 

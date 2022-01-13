@@ -34,7 +34,7 @@
       title: "Blog",
     }}
   />
-  <Section>
+  <!-- <Section>
     <h1 class="text-center">Blog</h1>
     <div class="posts-grid">
       {#each posts.slice(0, 6) as post}
@@ -43,13 +43,35 @@
         </div>
       {/each}
     </div>
-  </Section>
+  </Section> -->
 
   <Section>
+    <h2 class="mb-small text-center">Recent posts</h2>
+    <div class="grid grid-cols-3 justify-center auto-rows-auto gap-6">
+      {#each posts.slice(0, 3) as post}
+        <div class="w-full flex justify-center">
+          <PostPreview {post} type="blog" isMostRecent />
+        </div>
+      {/each}
+    </div>
+  </Section>
+
+  <!-- <Section>
     <h2 class="mb-small text-center">Previous posts</h2>
     <div class="posts-grid previous">
       {#each posts.slice(6) as post}
         <div class="posts-grid__item">
+          <PostPreview {post} type="blog" />
+        </div>
+      {/each}
+    </div>
+  </Section> -->
+
+  <Section>
+    <h2 class="mb-small text-center">Previous posts</h2>
+    <div class="grid grid-cols-3 justify-center auto-rows-auto gap-6">
+      {#each posts.slice(6) as post}
+        <div class="w-full flex justify-center">
           <PostPreview {post} type="blog" />
         </div>
       {/each}

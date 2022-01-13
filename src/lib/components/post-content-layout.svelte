@@ -84,7 +84,7 @@
     norobots: norobots,
   }}
 />
-<div class="flex justify-center mt-small mb-8">
+<div class="flex justify-center mt-small mb-8 @apply mt-xx-large">
   <div class="post content-blog">
     <img
       src="/images/{imagesDirectoryName}/{slug}/{teaserImage || image}"

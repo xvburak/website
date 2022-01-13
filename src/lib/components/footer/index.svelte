@@ -1,6 +1,6 @@
 <script>
   import FooterLink from "./link.svelte";
-  import Section from "./section.svelte";
+  // import Section from "./section.svelte";
 
   const socialLinks = [
     {
